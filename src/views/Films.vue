@@ -14,7 +14,7 @@
       <button @click="showFilms">Show films</button>
       <ul v-if="getFilms">
         <li v-for="film in films" :key="film.id">
-          Назва - {{film.name}} Хто вписав - {{film.author}}
+          FilmName - {{film.name}} UserEntered - {{film.author}}
         </li>
       </ul>
     </div>

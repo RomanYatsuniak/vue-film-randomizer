@@ -2,7 +2,6 @@ import {createRouter, createWebHistory} from "vue-router";
 import Home from "@/views/Home";
 import Films from "@/views/Films"
 import Enter from "@/views/Enter"
-import Page404 from '@/views/Page404'
 const router = createRouter({
     history: createWebHistory(),
     routes: [
@@ -19,8 +18,8 @@ const router = createRouter({
             component: Enter
         },
         {
-            path: '*',
-            component: Page404
+            path: "/:pathMatch(.*)*",
+            component: () => import("@/views/Page404")
         }
     ],
 

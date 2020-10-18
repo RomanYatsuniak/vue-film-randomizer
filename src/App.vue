@@ -33,5 +33,13 @@ export default {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
-
+@media (max-width: 375px) {
+  #nav {
+    display: flex;
+    flex-direction: column;
+  }
+  #nav a {
+    margin-bottom: 20px;
+  }
+}
 </style>

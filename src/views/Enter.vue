@@ -3,7 +3,7 @@
     Loading
   </div>
   <div v-else-if="empty">
-    9 Фільмів вибрано
+    9 films chosen
   </div>
   <div v-else>
     <form @submit.prevent="sendFilm()">
@@ -11,7 +11,7 @@
       <input name="film" id="filmInput" type="text" placeholder="Enter your film" v-model="film"/> <br/>
       <label for="author">Enter tour name</label>
       <input id="author" type="text" placeholder="Enter your name" v-model="author"/><br>
-      <button ref="btn">Вислати Фільм</button>
+      <button ref="btn">Send film</button>
     </form>
   </div>
 
@@ -34,7 +34,7 @@ export default {
   methods: {
     sendFilm() {
       if (this.film === '' || this.author === '') {
-        alert('Введіть назву фільму і ваше Ім\'я')
+        alert('Enter film and your name')
       } else {
 
         this.loading = true
@@ -47,7 +47,7 @@ export default {
         }).then(
             response => {
               if (response.status === 200) {
-                alert('Дякуємо, що зробили свій вибір')
+                alert('Thank you for your choice')
                 this.film = ''
                 this.author = ''
                 this.loading = true

@@ -3,15 +3,15 @@
     Loading
   </div>
   <div v-else-if="filmCounts">
-    Список фільмів пустий
+    Empty list
   </div>
   <div v-else>
     <div>
-      <button @click="takeFilm" ref="butFilm">Вибрати фільм серед списку</button>
+      <button @click="takeFilm" ref="butFilm">Randomize film</button>
     </div>
     <div v-if="winner">
       <h2>{{films[winner - 1]['name']}}</h2>
-      <button @click="showFilms">Показати фільми</button>
+      <button @click="showFilms">Show films</button>
       <ul v-if="getFilms">
         <li v-for="film in films" :key="film.id">
           Назва - {{film.name}} Хто вписав - {{film.author}}
